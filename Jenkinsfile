@@ -19,8 +19,8 @@ pipeline {
       steps {
         echo "Install conduit UI package"
         sh "npm install"
+      }
     }
-    
    
   }
   
