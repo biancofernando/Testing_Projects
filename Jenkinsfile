@@ -15,7 +15,13 @@ pipeline {
         sh "ansible --version"
       }
     }
-
+    stage('Install Packages') {
+      steps {
+        echo 'Install conduit UI packages'
+        sh 'npm install'
+    }
+    
+   
   }
   
 }
