@@ -1,12 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('Hello') {
+    stage('') {
       steps {
-        echo 'Hello World'
-        sleep 3
+        echo 'Hello from Blue Ocean'
       }
     }
 
+  }
+  environment {
+    COURSE = 'DevOps Practice'
+    BRANCH = 'main'
   }
 }
