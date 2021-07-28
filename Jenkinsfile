@@ -17,8 +17,8 @@ pipeline {
     }
     stage('Install Packages') {
       steps {
-        echo 'Install conduit UI packages'
-        sh 'npm install'
+        echo "Install conduit UI package"
+        sh "npm install"
     }
     
    
