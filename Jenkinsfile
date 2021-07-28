@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Install Packages') {
       steps {
-        dir("{$WORKSPACE}/conduit-ui"){
+        dir("${WORKSPACE}/conduit-ui") {
           echo 'Install conduit UI packages'
           sh 'npm install'
         }
