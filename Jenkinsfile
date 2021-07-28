@@ -24,5 +24,19 @@ pipeline {
         }
       }
     }
+    stage('Run Linting') {
+      steps {
+        dir("${WORKSPACE}/conduit-ui") {
+          sh 'npm run lint'
+        }
+      }
+    }
+    stage('Build UI') {
+      steps {
+        dir("${WORKSPACE}/conduit-ui") {
+          sh 'npm run build'
+        }
+      }
+    }  
   }
 }
