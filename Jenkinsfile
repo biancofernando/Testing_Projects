@@ -3,7 +3,7 @@ pipeline {
   environment {
     COURSE = 'Calgary DevOps'
     BRANCH = 'main'
-  }
+  /*}
   
     stages {
         stage('Hello') {
@@ -11,8 +11,8 @@ pipeline {
                 echo 'Hello Jenkins World'
             }
         }
-    }
-   /* WWWROOT = '/var/www/'
+    } */
+    WWWROOT = '/var/www/'
     SSHUSER = 'jenkins'
   }
   stages {
@@ -61,5 +61,6 @@ pipeline {
        sh "ssh web01 sudo rm -rf ${WWWROOT}/conduit"
        sh "ssh web01 sudo cp -r /home/${SSHUSER}/conduit ${WWWROOT}/conduit"
      }
-   } */ 
+   }
+  }
 }
