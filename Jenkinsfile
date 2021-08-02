@@ -40,7 +40,7 @@ pipeline {
        }
      }
    }
-   stage('Run linting') {
+   /*stage('Run linting') {
      steps {
        dir("${WORKSPACE}/conduit-ui") {
          echo "npm run lint"
@@ -61,6 +61,6 @@ pipeline {
        sh "ssh web01 sudo rm -rf ${WWWROOT}/conduit"
        sh "ssh web01 sudo cp -r /home/${SSHUSER}/conduit ${WWWROOT}/conduit"
       }
-    }
+    }*/
   }
 }
