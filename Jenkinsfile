@@ -27,7 +27,7 @@ pipeline {
        echo "Workspace Folder: ${WORKSPACE}"
      }
    }
-   /*stage('Install packages') {
+   stage('Install packages') {
      steps {
        sh "git pull origin ${BRANCH}"
      }
@@ -60,7 +60,7 @@ pipeline {
        sh "scp -r ${WORKSPACE}/conduit-ui/dist web01:/home/${SSHUSER}/conduit"
        sh "ssh web01 sudo rm -rf ${WWWROOT}/conduit"
        sh "ssh web01 sudo cp -r /home/${SSHUSER}/conduit ${WWWROOT}/conduit"
-     }
-   }*/
+      }
+    }
   }
 }
