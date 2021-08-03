@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api_url: 'https://testdevops'
+  api_url: 'https://web01'
 };
