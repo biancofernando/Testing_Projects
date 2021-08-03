@@ -25,7 +25,7 @@ pipeline {
    }
    stage('Install Front-End Packages') {
      steps {
-       dir("${WORKSPACE}/conduit-ui") {
+       dir("${WORKSPACE}/conduit-ui2") {
          echo "Install conduit UI packages"
          sh "npm install"
        }
@@ -33,14 +33,14 @@ pipeline {
    }
    stage('Run linting') {
      steps {
-       dir("${WORKSPACE}/conduit-ui") {
+       dir("${WORKSPACE}/conduit-ui2") {
          echo "npm run lint"
        }
      }
    }
    stage('Build UI') {
      steps {
-       dir("${WORKSPACE}/conduit-ui") {
+       dir("${WORKSPACE}/conduit-ui2") {
          sh "npm run build"
        }
      }
@@ -48,7 +48,7 @@ pipeline {
    stage('Deploy app to TESTWEB01') {
      steps {
        sh "ssh testweb01 rm -rf /home/${SSHUSER}/conduit"
-       sh "scp -r ${WORKSPACE}/conduit-ui/dist testweb01:/home/${SSHUSER}/conduit"
+       sh "scp -r ${WORKSPACE}/conduit-ui2/dist testweb01:/home/${SSHUSER}/conduit"
        sh "ssh testweb01 sudo rm -rf ${WWWROOT}/conduit"
        sh "ssh testweb01 sudo cp -r /home/${SSHUSER}/conduit ${WWWROOT}/conduit"
       }
