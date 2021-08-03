@@ -3,16 +3,7 @@ pipeline {
   environment {
     COURSE = 'Calgary DevOps'
     BRANCH = 'main'
-  /*}
-  
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello Jenkins World'
-            }
-        }
-    } */
-    WWWROOT = '/var/www/'
+    WWWROOT = '/var/www/html'
     SSHUSER = 'jenkins'
   }
   stages {
